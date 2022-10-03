@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220923 15:50:10.591" rpa="false" schemaversion="3">
+<suite id="s1" name="loginFb" source="C:\Users\YHVM-SN-EN-010\Documents\GitHub\Facebook\loginFb.robot">
+<test id="s1-t1" name="1. เข้าสู่ระบบ Facebook" line="16">
+<kw name="open facebook">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220923 15:50:10.793" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com'.</msg>
+<status status="PASS" starttime="20220923 15:50:10.793" endtime="20220923 15:50:13.204"/>
+</kw>
+<status status="PASS" starttime="20220923 15:50:10.793" endtime="20220923 15:50:13.204"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>เข้าสู่ระบบ</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220923 15:50:13.222" level="INFO">Current page contains text 'เข้าสู่ระบบ'.</msg>
+<status status="PASS" starttime="20220923 15:50:13.205" endtime="20220923 15:50:13.222"/>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<arg>//div[a[text()='ลืมรหัสผ่านใช่หรือไม่']]/a</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220923 15:50:13.235" level="INFO">Current page contains link '//div[a[text()='ลืมรหัสผ่านใช่หรือไม่']]/a'.</msg>
+<status status="PASS" starttime="20220923 15:50:13.223" endtime="20220923 15:50:13.235"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//div[a[text()='สร้างบัญชีใหม่']]/a</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220923 15:50:13.244" level="INFO">Current page contains element '//div[a[text()='สร้างบัญชีใหม่']]/a'.</msg>
+<status status="PASS" starttime="20220923 15:50:13.235" endtime="20220923 15:50:13.244"/>
+</kw>
+<status status="PASS" starttime="20220923 15:50:10.792" endtime="20220923 15:50:13.245"/>
+</test>
+<test id="s1-t2" name="2. เข้าสู่ระบบ &gt; Field อีเมลหรือหมายเลขโทรศัพท์มือถือ" line="21">
+<kw name="Input Text" library="Selenium2Library">
+<arg>//input[@name='email']</arg>
+<arg>tyjaikla8794@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220923 15:50:13.248" level="INFO">Typing text 'tyjaikla8794@gmail.com' into text field '//input[@name='email']'.</msg>
+<status status="PASS" starttime="20220923 15:50:13.247" endtime="20220923 15:50:13.330"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220923 15:50:16.333" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220923 15:50:13.331" endtime="20220923 15:50:16.333"/>
+</kw>
+<status status="PASS" starttime="20220923 15:50:13.246" endtime="20220923 15:50:16.333"/>
+</test>
+<test id="s1-t3" name="3. ตรวจสอบกรณีที่กรอกข้อมูลเป็นตัวเลขเบอร์โทรศัพท์เท่านั้น" line="24">
+<kw name="Input Text" library="Selenium2Library">
+<arg>//input[@name='email']</arg>
+<arg>0631568459</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220923 15:50:16.339" level="INFO">Typing text '0631568459' into text field '//input[@name='email']'.</msg>
+<msg timestamp="20220923 15:50:37.172" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.127)
+</msg>
+<msg timestamp="20220923 15:50:37.176" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.127)
+</msg>
+<status status="FAIL" starttime="20220923 15:50:16.339" endtime="20220923 15:50:37.244"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220923 15:50:37.244" endtime="20220923 15:50:37.244"/>
+</kw>
+<status status="FAIL" starttime="20220923 15:50:16.337" endtime="20220923 15:50:37.245">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.127)
+</status>
+</test>
+<test id="s1-t4" name="End" line="27">
+<kw name="Finish TestCase">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220923 15:50:37.249" endtime="20220923 15:50:39.296"/>
+</kw>
+<status status="PASS" starttime="20220923 15:50:37.248" endtime="20220923 15:50:39.296"/>
+</kw>
+<status status="PASS" starttime="20220923 15:50:37.247" endtime="20220923 15:50:39.297"/>
+</test>
+<status status="FAIL" starttime="20220923 15:50:10.591" endtime="20220923 15:50:39.300"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="loginFb">loginFb</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220923 15:50:37.172" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.127)
+</msg>
+</errors>
+</robot>
